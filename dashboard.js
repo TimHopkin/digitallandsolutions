@@ -1,7 +1,10 @@
 // Dashboard JavaScript for Digital Land Solutions
-// Interactive functionality and data visualization
+// Interactive functionality and data visualisation
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize mobile menu
+    initMobileMenu();
+    
     // Initialize all dashboard components
     initCounterAnimations();
     initWorldMap();
@@ -14,6 +17,59 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(updateLastUpdatedTime, 30000); // Update every 30 seconds
     setInterval(addRandomActivity, 45000); // Add activity every 45 seconds
 });
+
+// Mobile menu functionality
+function initMobileMenu() {
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+    const body = document.body;
+
+    function toggleMobileMenu() {
+        mobileMenuToggle.classList.toggle('active');
+        mobileMenu.classList.toggle('active');
+        mobileMenuOverlay.classList.toggle('active');
+        body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function closeMobileMenu() {
+        mobileMenuToggle.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        body.style.overflow = '';
+    }
+
+    // Toggle menu on button click
+    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+    // Close menu on overlay click
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+    // Close menu on menu link click
+    const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Add scroll effect to navbar
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(10px)';
+        } else {
+            navbar.style.backgroundColor = '#ffffff';
+            navbar.style.backdropFilter = 'none';
+        }
+    });
+}
 
 // Animated Counter Function
 function animateCounter(element, target, duration = 2000, prefix = '', suffix = '') {
@@ -253,6 +309,22 @@ const countryData = {
         projectList: [
             { name: 'National Land Registration', type: 'Land Registry', status: 'Completed' }
         ]
+    },
+    'United Kingdom': {
+        name: 'United Kingdom',
+        projects: 7500,
+        assets: '2.8M',
+        area: '10M',
+        status: 'active',
+        coordinates: [54.5, -2.0],
+        projectList: [
+            { name: 'England Digital Land Registry', type: 'Land Registry', status: 'Active' },
+            { name: 'UK Environmental Monitoring Network', type: 'Environmental', status: 'Active' },
+            { name: 'Scotland Land Reform Initiative', type: 'Land Registry', status: 'Active' },
+            { name: 'Wales Sustainable Agriculture Programme', type: 'Environmental', status: 'Active' },
+            { name: 'Northern Ireland Property Digitisation', type: 'Land Registry', status: 'Active' },
+            { name: 'UK Carbon Monitoring System', type: 'Environmental', status: 'Active' }
+        ]
     }
 };
 
@@ -268,7 +340,7 @@ function initWorldMap() {
     
     // Initialize the map
     worldMap = L.map('world-map', {
-        center: [20, 0], // Center on equator
+        centre: [20, 0], // Centre on equator
         zoom: 2,
         minZoom: 2,
         maxZoom: 18,
@@ -786,7 +858,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behavior: 'smooth',
+                behaviour: 'smooth',
                 block: 'start'
             });
         }

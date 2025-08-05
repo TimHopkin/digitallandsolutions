@@ -47,14 +47,99 @@
                 <li><a href="index.html#partnerships">Partnerships</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#solutions">Solutions</a></li>
+            <li><a href="index.html#impact">Impact</a></li>
+            <li><a href="thought-leadership.html" class="active">Thought Leadership</a></li>
+            <li><a href="index.html#partnerships">Partnerships</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero-section" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%); min-height: 40vh;">
         <div class="container">
             <h1 style="color: white; margin-bottom: 1rem;">Thought Leadership</h1>
             <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; max-width: 800px;">Exploring the intersection of technology, governance, and sustainability to build a more prosperous and equitable world.</p>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="ai-assistant-section">
+        <div class="container">
+            <div class="ai-assistant-intro">
+                <h2>Ask Our AI Assistant</h2>
+                <p>Get personalized insights from our thought leadership content. Whether you're a government leader, policy maker, or sustainability professional, our AI can help you find the most relevant research for your specific challenges.</p>
+            </div>
+            
+            <!-- Chat Widget -->
+            <div class="chat-widget" id="chat-widget">
+                <div class="chat-header">
+                    <div class="chat-header-info">
+                        <div class="chat-avatar">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM12 20C9.79 20 7.79 19.1 6.34 17.65C7.27 16.5 8.61 15.5 10.25 15.05C10.79 14.89 11.39 14.89 11.93 15.05C13.57 15.5 14.91 16.5 15.84 17.65C14.39 19.1 12.39 20 12 20Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="chat-header-text">
+                            <h4>DLS AI Assistant</h4>
+                            <div class="chat-status">
+                                <div class="status-dot"></div>
+                                <span>Online</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="chat-minimise" id="chat-minimise">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13H5V11H19V13Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM12 20C9.79 20 7.79 19.1 6.34 17.65C7.27 16.5 8.61 15.5 10.25 15.05C10.79 14.89 11.39 14.89 11.93 15.05C13.57 15.5 14.91 16.5 15.84 17.65C14.39 19.1 12.39 20 12 20Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div class="message-content">
+                            <p>Hi! I'm your AI assistant for exploring Digital Land Solutions' thought leadership. I can help you find relevant insights based on your role and challenges.</p>
+                            <p>Try asking me something like:</p>
+                            <div class="suggestion-pills">
+                                <button class="suggestion-pill">"I'm a minister interested in boosting agriculture"</button>
+                                <button class="suggestion-pill">"How can technology help with land governance?"</button>
+                                <button class="suggestion-pill">"Show me research on environmental policy"</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" class="chat-input" id="chat-input" placeholder="Ask me about our research..." maxlength="500">
+                        <button class="chat-send" id="chat-send">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -75,7 +160,7 @@
                 
                 <!-- Article 1 -->
                 <article class="blog-card" data-category="economics" data-id="1">
-                    <div class="blog-card-category">Economics & Policy</div>
+                    <div class="blog-card-category economics">Economics & Policy</div>
                     <h3>The Silent Asset: Valuing Nature in National GDP</h3>
                     <p class="blog-card-subtitle">Why traditional economic models are failing to account for the most critical component of a nation's wealth.</p>
                     <p class="blog-card-excerpt">For decades, economists have calculated a nation's prosperity through GDP, yet this fundamental metric overlooks the most valuable asset of all: the natural capital that underpins every economy on Earth.</p>
@@ -89,7 +174,7 @@
 
                 <!-- Article 2 -->
                 <article class="blog-card" data-category="international" data-id="2">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>The New National Security: How Nature Mitigates Risk</h3>
                     <p class="blog-card-subtitle">Linking ecosystem degradation to national instability, conflict, and economic volatility.</p>
                     <p class="blog-card-excerpt">National security strategists are awakening to a fundamental truth: environmental stability is the foundation upon which all other forms of security rest.</p>
@@ -103,7 +188,7 @@
 
                 <!-- Article 3 -->
                 <article class="blog-card" data-category="international" data-id="3">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>Beyond Borders: The Value of Pan-National Collaboration</h3>
                     <p class="blog-card-subtitle">How shared data and coordinated action are essential for protecting interconnected ecosystems and building regional stability.</p>
                     <p class="blog-card-excerpt">Ecosystems don't recognise borders. Rivers flow between nations, migratory species cross continents, and atmospheric systems circle the globe.</p>
@@ -117,7 +202,7 @@
 
                 <!-- Article 4 -->
                 <article class="blog-card" data-category="environment" data-id="4">
-                    <div class="blog-card-category">Environment & Future</div>
+                    <div class="blog-card-category environment">Environment & Future</div>
                     <h3>The Business of Nature: Why Public and Private Co-Investment is the Future</h3>
                     <p class="blog-card-subtitle">Mobilising private capital to restore ecosystems and generate sustainable returns.</p>
                     <p class="blog-card-excerpt">The global financing gap for environmental restoration is staggering: $4.1 trillion needed annually by 2030 to meet climate and biodiversity targets.</p>
@@ -131,7 +216,7 @@
 
                 <!-- Article 5 -->
                 <article class="blog-card" data-category="technology" data-id="5">
-                    <div class="blog-card-category">Technology & Innovation</div>
+                    <div class="blog-card-category technology">Technology & Innovation</div>
                     <h3>The Human-First AI: Building a Thriving Future in the Age of Automation</h3>
                     <p class="blog-card-subtitle">Ensuring that technology serves humanity's fundamental needs, starting with the health of our planet.</p>
                     <p class="blog-card-excerpt">As artificial intelligence reshapes every aspect of human society, we face a critical choice: will we use this power to extract more from our planet, or to heal it?</p>
@@ -145,7 +230,7 @@
 
                 <!-- Article 6 -->
                 <article class="blog-card" data-category="international" data-id="6">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>Land and Law: Modernising Registries to Fortify Democracy</h3>
                     <p class="blog-card-subtitle">The link between secure land tenure, anti-corruption efforts, and the rule of law.</p>
                     <p class="blog-card-excerpt">Outdated land registries are democracy's Achilles heel, creating opportunities for corruption and undermining citizens' fundamental rights to property ownership.</p>
@@ -159,7 +244,7 @@
 
                 <!-- Article 7 -->
                 <article class="blog-card" data-category="international" data-id="7">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>From Conflict to Collaboration: Using Data to Resolve Land Disputes</h3>
                     <p class="blog-card-subtitle">How technology can provide an impartial foundation for mediation and dispute resolution.</p>
                     <p class="blog-card-excerpt">Land disputes fuel conflicts worldwide, but objective, verifiable data can transform these sources of tension into opportunities for community building.</p>
@@ -173,7 +258,7 @@
 
                 <!-- Article 8 -->
                 <article class="blog-card" data-category="environment" data-id="8">
-                    <div class="blog-card-category">Environment & Future</div>
+                    <div class="blog-card-category environment">Environment & Future</div>
                     <h3>Life with Abundance: A Future Defined by Nature's Recovery</h3>
                     <p class="blog-card-subtitle">What the world looks like when nations prioritise ecological restoration and sustainability.</p>
                     <p class="blog-card-excerpt">Imagine a world where thriving ecosystems support abundant food systems, clean air and water are guaranteed, and sustainable prosperity creates opportunity for all.</p>
@@ -187,7 +272,7 @@
 
                 <!-- Article 9 -->
                 <article class="blog-card" data-category="environment" data-id="9">
-                    <div class="blog-card-category">Environment & Future</div>
+                    <div class="blog-card-category environment">Environment & Future</div>
                     <h3>The Challenge of Our Time: Restoring Nature on a Global Scale</h3>
                     <p class="blog-card-subtitle">A call to action for governments to make ecological restoration a central pillar of national policy.</p>
                     <p class="blog-card-excerpt">The climate and biodiversity crises represent the greatest challenge in human history, but also the greatest opportunity.</p>
@@ -201,7 +286,7 @@
 
                 <!-- Article 10 -->
                 <article class="blog-card" data-category="economics" data-id="10">
-                    <div class="blog-card-category">Economics & Policy</div>
+                    <div class="blog-card-category economics">Economics & Policy</div>
                     <h3>The Land-GDP Nexus: Why Nations Need Natural Abundance</h3>
                     <p class="blog-card-subtitle">Exploring the direct correlation between ecological health and long-term economic growth.</p>
                     <p class="blog-card-excerpt">Countries with healthy ecosystems consistently outperform in economic resilience, investment attraction, and sustainable growth.</p>
@@ -215,7 +300,7 @@
 
                 <!-- Article 11 -->
                 <article class="blog-card" data-category="economics" data-id="11">
-                    <div class="blog-card-category">Economics & Policy</div>
+                    <div class="blog-card-category economics">Economics & Policy</div>
                     <h3>The Global Economy's Bedrock: How Natural Systems Underpin Everything</h3>
                     <p class="blog-card-subtitle">From agriculture and tourism to pharmaceuticals and global supply chains, a look at what is at stake.</p>
                     <p class="blog-card-excerpt">Every sector of the global economy depends fundamentally on natural systems, yet this dependency remains largely invisible in financial markets.</p>
@@ -229,7 +314,7 @@
 
                 <!-- Article 12 -->
                 <article class="blog-card" data-category="international" data-id="12">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>The Power of Openness: Why Data Transparency is the New Diplomacy</h3>
                     <p class="blog-card-subtitle">How sharing anonymised land data can build cross-border trust and reduce geopolitical tensions.</p>
                     <p class="blog-card-excerpt">Open environmental data creates unprecedented opportunities for trust-building between nations.</p>
@@ -243,7 +328,7 @@
 
                 <!-- Article 13 -->
                 <article class="blog-card" data-category="technology" data-id="13">
-                    <div class="blog-card-category">Technology & Innovation</div>
+                    <div class="blog-card-category technology">Technology & Innovation</div>
                     <h3>From Vague Commitments to Verified Impact: The Role of Technology in Sustainability</h3>
                     <p class="blog-card-subtitle">How digital land systems can turn national climate pledges into measurable, auditable realities.</p>
                     <p class="blog-card-excerpt">The era of unverifiable sustainability claims is ending. Advanced monitoring technology makes it possible to track and verify environmental commitments in real-time.</p>
@@ -257,7 +342,7 @@
 
                 <!-- Article 14 -->
                 <article class="blog-card" data-category="technology" data-id="14">
-                    <div class="blog-card-category">Technology & Innovation</div>
+                    <div class="blog-card-category technology">Technology & Innovation</div>
                     <h3>Building with AI: A New Paradigm for Land Policy and Management</h3>
                     <p class="blog-card-subtitle">How intelligent agents can assist policymakers in making data-driven decisions at unprecedented speed and scale.</p>
                     <p class="blog-card-excerpt">AI agents can analyse vast datasets to forecast land-use trends, model policy impacts, and streamline bureaucratic processes.</p>
@@ -271,7 +356,7 @@
 
                 <!-- Article 15 -->
                 <article class="blog-card" data-category="economics" data-id="15">
-                    <div class="blog-card-category">Economics & Policy</div>
+                    <div class="blog-card-category economics">Economics & Policy</div>
                     <h3>The New Gold Rush: The Economics of Ecosystem Restoration</h3>
                     <p class="blog-card-subtitle">Why investing in the rewilding and restoration of landscapes is the next great economic opportunity.</p>
                     <p class="blog-card-excerpt">Ecosystem restoration isn't just an environmental imperative—it's an emerging economic sector with enormous growth potential.</p>
@@ -285,7 +370,7 @@
 
                 <!-- Article 16 -->
                 <article class="blog-card" data-category="technology" data-id="16">
-                    <div class="blog-card-category">Technology & Innovation</div>
+                    <div class="blog-card-category technology">Technology & Innovation</div>
                     <h3>The Decentralised Cadastre: The Future of Land Records in a Trustless World</h3>
                     <p class="blog-card-subtitle">Exploring the potential of blockchain and distributed ledgers to secure land ownership and prevent fraud.</p>
                     <p class="blog-card-excerpt">Blockchain technology offers the possibility of tamper-proof land records that don't depend on central authorities for their integrity.</p>
@@ -299,7 +384,7 @@
 
                 <!-- Article 17 -->
                 <article class="blog-card" data-category="international" data-id="17">
-                    <div class="blog-card-category">International Relations</div>
+                    <div class="blog-card-category international">International Relations</div>
                     <h3>Data as Diplomacy: The UN's Path to Peace Through Collaborative Mapping</h3>
                     <p class="blog-card-subtitle">How the UN and other international bodies can use shared land data to predict and prevent conflicts.</p>
                     <p class="blog-card-excerpt">Shared environmental monitoring can provide early warning systems for resource conflicts while creating frameworks for collaborative response.</p>
@@ -313,7 +398,7 @@
 
                 <!-- Article 18 -->
                 <article class="blog-card" data-category="environment" data-id="18">
-                    <div class="blog-card-category">Environment & Future</div>
+                    <div class="blog-card-category environment">Environment & Future</div>
                     <h3>From Fragmentation to Cohesion: The Power of Landscape-Level Thinking</h3>
                     <p class="blog-card-subtitle">Managing land as an interconnected system, not a collection of isolated parcels.</p>
                     <p class="blog-card-excerpt">Ecosystems function as integrated wholes, yet governance systems typically manage land parcel by parcel.</p>
@@ -327,10 +412,10 @@
 
                 <!-- Article 19 -->
                 <article class="blog-card" data-category="technology" data-id="19">
-                    <div class="blog-card-category">Technology & Innovation</div>
+                    <div class="blog-card-category technology">Technology & Innovation</div>
                     <h3>The Responsible Technologist: DLS's Commitment to Ethical AI</h3>
                     <p class="blog-card-subtitle">Our pledge to build AI systems that are transparent, accountable, and aligned with human values.</p>
-                    <p class="blog-card-excerpt">At Digital Land Solutions, we recognize that AI systems affecting land governance and environmental outcomes must be designed with the highest ethical standards.</p>
+                    <p class="blog-card-excerpt">At Digital Land Solutions, we recognise that AI systems affecting land governance and environmental outcomes must be designed with the highest ethical standards.</p>
                     <div class="blog-card-meta">
                         <span>January 2025</span>
                         <span>•</span>
@@ -341,10 +426,10 @@
 
                 <!-- Article 20 -->
                 <article class="blog-card" data-category="economics" data-id="20">
-                    <div class="blog-card-category">Economics & Policy</div>
+                    <div class="blog-card-category economics">Economics & Policy</div>
                     <h3>The Partnership Dividend: Maximising Impact Through Our Global Network</h3>
                     <p class="blog-card-subtitle">How collaboration with governments, NGOs, and the private sector multiplies our collective ability to build a better world.</p>
-                    <p class="blog-card-excerpt">Digital Land Solutions serves as a technological hub that empowers a global network of partners to achieve far more than any single organization could accomplish alone.</p>
+                    <p class="blog-card-excerpt">Digital Land Solutions serves as a technological hub that empowers a global network of partners to achieve far more than any single organisation could accomplish alone.</p>
                     <div class="blog-card-meta">
                         <span>January 2025</span>
                         <span>•</span>
@@ -417,6 +502,45 @@
             }
         });
 
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        // Toggle menu on button click
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Close menu on overlay click
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu on menu link click
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+
         // Blog Filtering Functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterButtons = document.querySelectorAll('.filter-btn');
@@ -424,6 +548,9 @@
             const modal = document.getElementById('article-modal');
             const modalBody = document.getElementById('article-modal-body');
             const closeBtn = document.querySelector('.article-modal-close');
+            
+            // Initialize AI Chat
+            chatUI.init();
 
             // Filter functionality
             filterButtons.forEach(button => {
@@ -463,7 +590,7 @@
                         <h3>The Hidden Economy of Nature</h3>
                         <p>Consider Rwanda's remarkable transformation. After the 1994 genocide, the country invested heavily in reforestation and ecosystem restoration. Today, Rwanda's natural capital contributes an estimated 35% to its GDP—yet this contribution remains invisible in traditional economic measurements.</p>
                         
-                        <p>This pattern repeats globally. Costa Rica's payment for ecosystem services program recognises that its forests are worth more standing than cut down, generating sustainable revenue while preserving biodiversity.</p>
+                        <p>This pattern repeats globally. Costa Rica's payment for ecosystem services programme recognises that its forests are worth more standing than cut down, generating sustainable revenue while preserving biodiversity.</p>
                         
                         <h3>The Digital Advantage</h3>
                         <p>Modern technology makes natural capital accounting practical at scale. Digital Land Solutions' platform already tracks these metrics for governments worldwide, providing the data foundation necessary for natural capital accounting.</p>
@@ -498,6 +625,620 @@
                 // Sample articles - in production you'd have all 20 with full content
             };
 
+            // AI Chatbot System
+            const aiChatbot = {
+                // Article database for AI reference
+                articleDatabase: [
+                    {
+                        id: 1,
+                        title: "The Silent Asset: Valuing Nature in National GDP",
+                        category: "Economics & Policy",
+                        keywords: ["gdp", "natural capital", "economics", "agriculture", "valuation", "rwanda", "costa rica"],
+                        summary: "Traditional GDP overlooks natural capital. Countries like Rwanda show 35% GDP from natural capital. Technology enables natural capital accounting at scale.",
+                        relevantFor: ["governors", "ministers", "economists", "agriculture", "finance"],
+                        keyInsights: ["Natural capital worth $235 billion in global agriculture", "Rwanda's reforestation contributed 35% to GDP", "Digital platforms make natural capital accounting practical"]
+                    },
+                    {
+                        id: 2,
+                        title: "The New National Security: How Nature Mitigates Risk",
+                        category: "International Relations",
+                        keywords: ["security", "conflict", "drought", "migration", "stability", "syria", "climate"],
+                        summary: "Environmental degradation causes geopolitical instability through resource conflicts, migration, and state fragility. Syrian drought example shows the link.",
+                        relevantFor: ["security", "ministers", "governors", "defence", "international"],
+                        keyInsights: ["Syrian drought forced 1.5M rural residents to migrate to cities", "Environmental intelligence provides early warning systems", "Five pathways: resource conflicts, migration, supply chains, volatility, state fragility"]
+                    },
+                    {
+                        id: 10,
+                        title: "The Land-GDP Nexus: Why Nations Need Natural Abundance",
+                        category: "Economics & Policy", 
+                        keywords: ["land", "gdp", "economic growth", "ecosystems", "resilience", "investment"],
+                        summary: "Healthy ecosystems correlate with economic resilience, investment attraction, and sustainable growth.",
+                        relevantFor: ["governors", "economic development", "ministers", "agriculture"],
+                        keyInsights: ["Ecological health drives long-term economic performance", "Investors increasingly factor environmental risk", "Natural abundance attracts sustainable investment"]
+                    },
+                    {
+                        id: 4,
+                        title: "The Business of Nature: Why Public and Private Co-Investment is the Future",
+                        category: "Environment & Future",
+                        keywords: ["investment", "private sector", "restoration", "financing", "business", "returns"],
+                        summary: "$4.1 trillion financing gap for environmental restoration by 2030. Private capital mobilisation essential for ecosystem restoration.",
+                        relevantFor: ["finance", "investment", "governors", "private sector", "development"],
+                        keyInsights: ["$4.1 trillion annual need by 2030", "Private-public partnerships essential", "Sustainable returns from ecosystem restoration"]
+                    },
+                    {
+                        id: 15,
+                        title: "The New Gold Rush: The Economics of Ecosystem Restoration",
+                        category: "Economics & Policy",
+                        keywords: ["restoration", "economics", "investment", "opportunity", "rewilding", "growth"],
+                        summary: "Ecosystem restoration represents emerging economic sector with enormous growth potential beyond environmental benefits.",
+                        relevantFor: ["governors", "economic development", "agriculture", "investment"],
+                        keyInsights: ["Restoration as economic sector", "Job creation potential", "Multiple revenue streams from restored ecosystems"]
+                    }
+                ],
+
+                // User context and conversation state
+                currentContext: {
+                    userRole: null,
+                    userCountry: null,
+                    interests: [],
+                    conversationStage: 'initial'
+                },
+
+                // Response templates based on user roles
+                roleTemplates: {
+                    governor: {
+                        greeting: "As a Governor, you're in a unique position to transform your region's economic future through sustainable land management.",
+                        focus: ["economic development", "job creation", "investment attraction", "environmental resilience"]
+                    },
+                    minister: {
+                        greeting: "Ministers like yourself are key to implementing policies that balance economic growth with environmental sustainability.",
+                        focus: ["policy implementation", "national strategy", "cross-sector coordination", "international cooperation"]
+                    },
+                    agriculture: {
+                        greeting: "Agricultural leaders understand that healthy land is the foundation of food security and rural prosperity.",
+                        focus: ["agricultural productivity", "soil health", "climate resilience", "farmer livelihoods"]
+                    },
+                    finance: {
+                        greeting: "From a financial perspective, natural capital represents both massive opportunity and significant risk.",
+                        focus: ["investment opportunities", "risk mitigation", "natural capital accounting", "sustainable finance"]
+                    }
+                },
+
+                // Core AI logic functions
+                analyseUserInput(input) {
+                    const lowerInput = input.toLowerCase();
+                    const context = this.currentContext;
+                    
+                    // Extract user role
+                    if (lowerInput.includes('governor') || lowerInput.includes('govern')) {
+                        context.userRole = 'governor';
+                    } else if (lowerInput.includes('minister')) {
+                        context.userRole = 'minister';
+                    } else if (lowerInput.includes('agriculture') || lowerInput.includes('farm') || lowerInput.includes('crop')) {
+                        context.interests.push('agriculture');
+                    } else if (lowerInput.includes('finance') || lowerInput.includes('invest') || lowerInput.includes('economic')) {
+                        context.interests.push('finance');
+                    }
+                    
+                    // Extract country context
+                    const countries = ['ghana', 'nigeria', 'kenya', 'rwanda', 'south africa', 'ethiopia', 'uganda'];
+                    countries.forEach(country => {
+                        if (lowerInput.includes(country)) {
+                            context.userCountry = country;
+                        }
+                    });
+                    
+                    // Extract interests
+                    const interestKeywords = {
+                        'agriculture': ['agriculture', 'farm', 'crop', 'food', 'rural'],
+                        'environment': ['environment', 'climate', 'nature', 'restoration', 'conservation'],
+                        'technology': ['technology', 'digital', 'innovation', 'data', 'platform'],
+                        'economics': ['economic', 'gdp', 'growth', 'development', 'investment'],
+                        'security': ['security', 'conflict', 'stability', 'risk']
+                    };
+                    
+                    Object.entries(interestKeywords).forEach(([interest, keywords]) => {
+                        if (keywords.some(keyword => lowerInput.includes(keyword))) {
+                            if (!context.interests.includes(interest)) {
+                                context.interests.push(interest);
+                            }
+                        }
+                    });
+                    
+                    return context;
+                },
+
+                findRelevantArticles(context, query) {
+                    const queryLower = query.toLowerCase();
+                    const scored = this.articleDatabase.map(article => {
+                        let score = 0;
+                        
+                        // Keyword matching
+                        article.keywords.forEach(keyword => {
+                            if (queryLower.includes(keyword)) score += 3;
+                        });
+                        
+                        // Role relevance
+                        if (context.userRole && article.relevantFor.includes(context.userRole)) {
+                            score += 5;
+                        }
+                        
+                        // Interest matching
+                        context.interests.forEach(interest => {
+                            if (article.relevantFor.includes(interest) || article.keywords.includes(interest)) {
+                                score += 2;
+                            }
+                        });
+                        
+                        // Title/summary matching
+                        if (article.title.toLowerCase().includes(queryLower.split(' ')[0]) || 
+                            article.summary.toLowerCase().includes(queryLower.split(' ')[0])) {
+                            score += 4;
+                        }
+                        
+                        return { ...article, score };
+                    });
+                    
+                    return scored.filter(article => article.score > 0)
+                                 .sort((a, b) => b.score - a.score)
+                                 .slice(0, 3);
+                },
+
+                generateResponse(userInput) {
+                    const context = this.analyseUserInput(userInput);
+                    const relevantArticles = this.findRelevantArticles(context, userInput);
+                    
+                    let response = '';
+                    let ctas = [];
+                    
+                    // Role-based greeting
+                    if (context.userRole && this.roleTemplates[context.userRole]) {
+                        response += this.roleTemplates[context.userRole].greeting + ' ';
+                    }
+                    
+                    // Specific responses based on query content
+                    if (userInput.toLowerCase().includes('agriculture') || userInput.toLowerCase().includes('boost agriculture')) {
+                        response += `Based on our research, there are several proven strategies to boost agriculture through sustainable land management:\n\n`;
+                        response += `• **Natural Capital Accounting**: Countries like Rwanda have seen agriculture contribute 35% to GDP by properly valuing ecosystem services\n`;
+                        response += `• **Technology Integration**: Digital land platforms can optimise crop yields and soil health monitoring\n`;
+                        response += `• **Public-Private Partnerships**: The $4.1 trillion needed for environmental restoration by 2030 requires innovative financing models\n\n`;
+                    } else if (userInput.toLowerCase().includes('technology') || userInput.toLowerCase().includes('digital')) {
+                        response += `Technology is revolutionizing land governance and environmental management:\n\n`;
+                        response += `• **Real-time Monitoring**: Environmental intelligence systems provide early warning for resource conflicts\n`;
+                        response += `• **Data-Driven Decisions**: AI can assist policymakers in making evidence-based land use decisions\n`;
+                        response += `• **Transparency**: Digital registries reduce corruption and strengthen property rights\n\n`;
+                    } else if (userInput.toLowerCase().includes('policy') || userInput.toLowerCase().includes('governance')) {
+                        response += `Effective land governance policies create the foundation for sustainable development:\n\n`;
+                        response += `• **Land Registry Modernization**: Secure property rights reduce conflicts and enable investment\n`;
+                        response += `• **Cross-border Cooperation**: Ecosystems don't recognise borders - collaboration is essential\n`;
+                        response += `• **Natural Capital Integration**: Including ecosystem value in national accounting transforms decision-making\n\n`;
+                    } else {
+                        response += `I can help you explore our research on sustainable land management and governance. `;
+                    }
+                    
+                    // Add relevant articles if found
+                    if (relevantArticles.length > 0) {
+                        response += `Here are the most relevant insights from our thought leadership:\n\n`;
+                        relevantArticles.slice(0, 2).forEach(article => {
+                            response += `**${article.title}**\n${article.summary}\n\n`;
+                        });
+                    }
+                    
+                    // Generate CTAs based on context
+                    if (context.userRole === 'governor' || context.interests.includes('agriculture')) {
+                        ctas.push({ 
+                            text: 'Schedule a consultation to discuss your region\'s potential', 
+                            type: 'primary',
+                            action: 'consultation'
+                        });
+                        ctas.push({ 
+                            text: 'Get our agriculture & governance research sent to your inbox', 
+                            type: 'secondary',
+                            action: 'email'
+                        });
+                    } else if (context.interests.includes('technology')) {
+                        ctas.push({ 
+                            text: 'See our digital land platform in action', 
+                            type: 'primary',
+                            action: 'demo'
+                        });
+                        ctas.push({ 
+                            text: 'Download our technology implementation guide', 
+                            type: 'secondary',
+                            action: 'download'
+                        });
+                    } else {
+                        ctas.push({ 
+                            text: 'Chat with our team about your specific challenges', 
+                            type: 'primary',
+                            action: 'chat'
+                        });
+                        ctas.push({ 
+                            text: 'Subscribe to get our latest insights', 
+                            type: 'secondary',
+                            action: 'subscribe'
+                        });
+                    }
+                    
+                    return {
+                        text: response,
+                        articles: relevantArticles,
+                        ctas: ctas,
+                        context: context
+                    };
+                }
+            };
+
+            // Chat UI functionality
+            const chatUI = {
+                messagesContainer: document.getElementById('chat-messages'),
+                chatInput: document.getElementById('chat-input'),
+                sendButton: document.getElementById('chat-send'),
+                chatWidget: document.getElementById('chat-widget'),
+                minimiseButton: document.getElementById('chat-minimise'),
+                chatHeader: null,
+                isMinimised: false,
+                
+                init() {
+                    this.chatHeader = this.chatWidget.querySelector('.chat-header');
+                    
+                    // Handle minimise button click
+                    this.minimiseButton.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        this.toggleMinimise();
+                    });
+                    
+                    // Handle header click when minimised
+                    this.chatHeader.addEventListener('click', () => {
+                        if (this.isMinimised) {
+                            this.toggleMinimise();
+                        }
+                    });
+                    
+                    // Handle send button click
+                    this.sendButton.addEventListener('click', () => this.sendMessage());
+                    
+                    // Handle enter key in input
+                    this.chatInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter' && !e.shiftKey) {
+                            e.preventDefault();
+                            this.sendMessage();
+                        }
+                    });
+                    
+                    // Handle suggestion pill clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('suggestion-pill')) {
+                            const suggestionText = e.target.textContent.replace(/['"]/g, '');
+                            this.chatInput.value = suggestionText;
+                            this.sendMessage();
+                        }
+                    });
+                    
+                    // Handle CTA button clicks
+                    document.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('cta-button')) {
+                            e.preventDefault();
+                            const action = e.target.dataset.action;
+                            this.handleCTA(action, e.target.textContent);
+                        }
+                    });
+                },
+                
+                sendMessage() {
+                    const message = this.chatInput.value.trim();
+                    if (!message) return;
+                    
+                    // Add user message to chat
+                    this.addMessage(message, 'user');
+                    this.chatInput.value = '';
+                    this.sendButton.disabled = true;
+                    
+                    // Show typing indicator
+                    this.showTypingIndicator();
+                    
+                    // Generate AI response
+                    setTimeout(() => {
+                        this.hideTypingIndicator();
+                        const aiResponse = aiChatbot.generateResponse(message);
+                        this.addAIResponse(aiResponse);
+                        this.sendButton.disabled = false;
+                    }, 1500 + Math.random() * 1000); // Random delay for realism
+                },
+                
+                addMessage(text, sender) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = `message ${sender}-message`;
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'message-avatar';
+                    avatar.innerHTML = sender === 'user' ? 
+                        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/></svg>' :
+                        '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM12 20C9.79 20 7.79 19.1 6.34 17.65C7.27 16.5 8.61 15.5 10.25 15.05C10.79 14.89 11.39 14.89 11.93 15.05C13.57 15.5 14.91 16.5 15.84 17.65C14.39 19.1 12.39 20 12 20Z" fill="currentColor"/></svg>';
+                    
+                    const content = document.createElement('div');
+                    content.className = 'message-content';
+                    content.innerHTML = `<p>${text}</p>`;
+                    
+                    messageDiv.appendChild(avatar);
+                    messageDiv.appendChild(content);
+                    
+                    this.messagesContainer.appendChild(messageDiv);
+                    this.scrollToBottom();
+                },
+                
+                addAIResponse(response) {
+                    const messageDiv = document.createElement('div');
+                    messageDiv.className = 'message ai-message';
+                    
+                    const avatar = document.createElement('div');
+                    avatar.className = 'message-avatar';
+                    avatar.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM12 20C9.79 20 7.79 19.1 6.34 17.65C7.27 16.5 8.61 15.5 10.25 15.05C10.79 14.89 11.39 14.89 11.93 15.05C13.57 15.5 14.91 16.5 15.84 17.65C14.39 19.1 12.39 20 12 20Z" fill="currentColor"/></svg>';
+                    
+                    const content = document.createElement('div');
+                    content.className = 'message-content';
+                    
+                    // Format response text with markdown-like formatting
+                    let formattedText = response.text
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\n\n/g, '</p><p>')
+                        .replace(/\n/g, '<br>');
+                    
+                    content.innerHTML = `<p>${formattedText}</p>`;
+                    
+                    // Add article recommendations if any
+                    if (response.articles && response.articles.length > 0) {
+                        response.articles.slice(0, 1).forEach(article => {
+                            const recommendation = document.createElement('div');
+                            recommendation.className = 'article-recommendation';
+                            recommendation.innerHTML = `
+                                <h5>${article.title}</h5>
+                                <p>${article.summary}</p>
+                                <a href="#" onclick="document.querySelector('[data-id=\\"${article.id}\\"] .read-more-btn').click(); return false;">Read Full Article →</a>
+                            `;
+                            content.appendChild(recommendation);
+                        });
+                    }
+                    
+                    // Add CTA buttons
+                    if (response.ctas && response.ctas.length > 0) {
+                        const ctaContainer = document.createElement('div');
+                        ctaContainer.className = 'cta-buttons';
+                        
+                        response.ctas.forEach(cta => {
+                            const ctaButton = document.createElement('a');
+                            ctaButton.href = '#';
+                            ctaButton.className = `cta-button ${cta.type}`;
+                            ctaButton.dataset.action = cta.action;
+                            ctaButton.textContent = cta.text;
+                            ctaContainer.appendChild(ctaButton);
+                        });
+                        
+                        content.appendChild(ctaContainer);
+                    }
+                    
+                    messageDiv.appendChild(avatar);
+                    messageDiv.appendChild(content);
+                    
+                    this.messagesContainer.appendChild(messageDiv);
+                    this.scrollToBottom();
+                },
+                
+                showTypingIndicator() {
+                    const typingDiv = document.createElement('div');
+                    typingDiv.className = 'typing-indicator';
+                    typingDiv.id = 'typing-indicator';
+                    typingDiv.innerHTML = `
+                        <div class="message-avatar">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 6C13.1 6 14 6.9 14 8C14 9.1 13.1 10 12 10C10.9 10 10 9.1 10 8C10 6.9 10.9 6 12 6ZM12 20C9.79 20 7.79 19.1 6.34 17.65C7.27 16.5 8.61 15.5 10.25 15.05C10.79 14.89 11.39 14.89 11.93 15.05C13.57 15.5 14.91 16.5 15.84 17.65C14.39 19.1 12.39 20 12 20Z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <span>AI is typing</span>
+                        <div class="typing-dots">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    `;
+                    this.messagesContainer.appendChild(typingDiv);
+                    this.scrollToBottom();
+                },
+                
+                hideTypingIndicator() {
+                    const indicator = document.getElementById('typing-indicator');
+                    if (indicator) {
+                        indicator.remove();
+                    }
+                },
+                
+                handleCTA(action, buttonText) {
+                    // Show email capture modal or contact form based on action
+                    let modalContent = '';
+                    
+                    switch(action) {
+                        case 'consultation':
+                        case 'chat':
+                            modalContent = this.createContactForm('consultation', buttonText);
+                            break;
+                        case 'email':
+                        case 'subscribe':
+                            modalContent = this.createEmailForm('subscription', buttonText);
+                            break;
+                        case 'demo':
+                            modalContent = this.createContactForm('demo', buttonText);
+                            break;
+                        case 'download':
+                            modalContent = this.createEmailForm('download', buttonText);
+                            break;
+                        default:
+                            modalContent = this.createContactForm('general', buttonText);
+                    }
+                    
+                    this.showModal(modalContent);
+                },
+                
+                createContactForm(type, buttonText) {
+                    return `
+                        <div class="modal-header">
+                            <h3>Get in Touch</h3>
+                            <p>Let's discuss how Digital Land Solutions can help with your specific challenges.</p>
+                        </div>
+                        <form class="contact-form" onsubmit="chatUI.handleFormSubmit(event, '${type}')">
+                            <div class="form-group">
+                                <label for="contact-name">Name *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-role">Role/Title</label>
+                                <select id="contact-role" name="role">
+                                    <option value="">Select your role</option>
+                                    <option value="governor">Governor</option>
+                                    <option value="minister">Minister</option>
+                                    <option value="director">Director/Manager</option>
+                                    <option value="researcher">Researcher</option>
+                                    <option value="consultant">Consultant</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-country">Country</label>
+                                <input type="text" id="contact-country" name="country" placeholder="e.g., Ghana">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">How can we help? *</label>
+                                <textarea id="contact-message" name="message" rows="4" required placeholder="Tell us about your challenges or interests..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    `;
+                },
+                
+                createEmailForm(type, buttonText) {
+                    const isDownload = type === 'download';
+                    return `
+                        <div class="modal-header">
+                            <h3>${isDownload ? 'Download Resources' : 'Stay Updated'}</h3>
+                            <p>${isDownload ? 'Get our latest research and implementation guides.' : 'Subscribe to receive our thought leadership insights and updates.'}</p>
+                        </div>
+                        <form class="email-form" onsubmit="chatUI.handleFormSubmit(event, '${type}')">
+                            <div class="form-group">
+                                <label for="email-name">Name *</label>
+                                <input type="text" id="email-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email-email">Email *</label>
+                                <input type="email" id="email-email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email-interests">Interests (optional)</label>
+                                <div class="checkbox-group">
+                                    <label><input type="checkbox" name="interests" value="agriculture"> Agriculture & Food Security</label>
+                                    <label><input type="checkbox" name="interests" value="technology"> Technology & Innovation</label>
+                                    <label><input type="checkbox" name="interests" value="policy"> Policy & Governance</label>
+                                    <label><input type="checkbox" name="interests" value="environment"> Environment & Climate</label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">${isDownload ? 'Download & Subscribe' : 'Subscribe'}</button>
+                        </form>
+                    `;
+                },
+                
+                showModal(content) {
+                    // Create modal overlay
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    overlay.innerHTML = `
+                        <div class="modal-content">
+                            <button class="modal-close" onclick="this.closest('.modal-overlay').remove()">&times;</button>
+                            ${content}
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(overlay);
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Handle click outside to close
+                    overlay.addEventListener('click', (e) => {
+                        if (e.target === overlay) {
+                            overlay.remove();
+                            document.body.style.overflow = 'auto';
+                        }
+                    });
+                },
+                
+                handleFormSubmit(event, type) {
+                    event.preventDefault();
+                    const formData = new FormData(event.target);
+                    
+                    // In a real implementation, you would send this data to your backend
+                    console.log('Form submission:', type, Object.fromEntries(formData));
+                    
+                    // Show success message
+                    const modal = event.target.closest('.modal-overlay');
+                    modal.querySelector('.modal-content').innerHTML = `
+                        <div class="success-message">
+                            <h3>Thank you!</h3>
+                            <p>We'll be in touch with you soon.</p>
+                            <button class="btn btn-primary" onclick="this.closest('.modal-overlay').remove(); document.body.style.overflow = 'auto';">Close</button>
+                        </div>
+                    `;
+                    
+                    // Add success message to chat
+                    setTimeout(() => {
+                        this.addMessage("Thank you for your interest! Our team will be in touch with you soon.", 'ai');
+                        modal.remove();
+                        document.body.style.overflow = 'auto';
+                    }, 2000);
+                },
+                
+                scrollToBottom() {
+                    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                },
+                
+                toggleMinimise() {
+                    this.isMinimised = !this.isMinimised;
+                    
+                    if (this.isMinimised) {
+                        this.chatWidget.classList.add('minimised');
+                        // Change icon to expand (chevron up or plus)
+                        this.minimiseButton.innerHTML = `
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 14L12 9L17 14H7Z" fill="currentColor"/>
+                            </svg>
+                        `;
+                    } else {
+                        this.chatWidget.classList.remove('minimised');
+                        // Change icon back to minimise (minus)
+                        this.minimiseButton.innerHTML = `
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 13H5V11H19V13Z" fill="currentColor"/>
+                            </svg>
+                        `;
+                        
+                        // Focus input when expanded
+                        setTimeout(() => {
+                            this.chatInput.focus();
+                        }, 300);
+                    }
+                }
+            };
+
+            // Category mapping function
+            function getCategoryClass(category) {
+                const categoryMap = {
+                    'Economics & Policy': 'economics',
+                    'Technology & Innovation': 'technology',
+                    'International Relations': 'international',
+                    'Environment & Future': 'environment'
+                };
+                return categoryMap[category] || '';
+            }
+
             // Handle read more button clicks
             document.querySelectorAll('.read-more-btn').forEach(button => {
                 button.addEventListener('click', function(e) {
@@ -506,9 +1247,10 @@
                     const article = articleData[articleId];
                     
                     if (article) {
+                        const categoryClass = getCategoryClass(article.category);
                         modalBody.innerHTML = `
                             <div class="article-header">
-                                <span class="article-category">${article.category}</span>
+                                <span class="article-category ${categoryClass}">${article.category}</span>
                                 <h1>${article.title}</h1>
                                 <h2 class="article-subtitle">${article.subtitle}</h2>
                                 <div class="article-meta">Published January 2025 • 8 min read</div>
@@ -520,10 +1262,14 @@
                         modal.style.display = 'block';
                         document.body.style.overflow = 'hidden';
                     } else {
-                        // Fallback for articles without full content yet
+                        // Get category from article card to show correct color even for placeholder articles
+                        const articleCard = document.querySelector(`[data-id="${articleId}"]`);
+                        const cardCategory = articleCard ? articleCard.querySelector('.blog-card-category').textContent : 'Article';
+                        const categoryClass = getCategoryClass(cardCategory);
+                        
                         modalBody.innerHTML = `
                             <div class="article-header">
-                                <span class="article-category">Article ${articleId}</span>
+                                <span class="article-category ${categoryClass}">${cardCategory}</span>
                                 <h1>Article Content Coming Soon</h1>
                                 <h2 class="article-subtitle">This article is being developed with comprehensive content.</h2>
                                 <div class="article-meta">Published January 2025</div>

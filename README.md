@@ -6,7 +6,8 @@ This is the institutional website for Digital Land Solutions (DLS), designed to 
 
 ## Key Features
 
-- **Institutional Branding:** Clean, authoritative design with British English tone
+- **British English:** All content uses British English spellings (-ise, -our, -re endings), terminology (programme, organisation, centre), and grammar
+- **Institutional Branding:** Clean, authoritative design with professional British English tone
 - **Open Dashboard:** Live, public view of operations and impact metrics
 - **Solutions Focus:** Problem-oriented approach to land governance challenges
 - **Trust Signals:** Partner logos, case studies, and impact metrics

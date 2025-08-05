@@ -28,7 +28,7 @@ The DLS website will articulate a core value proposition centred on **Trust, Tra
 * **Separation of Brands:** Clearly distinguishing the institutional brand (DLS) from the product brands (Land App, Nature Reporting, etc.).
 * **Authentic Transparency:** A live, public dashboard to demonstrate our impact and operations in real-time.
 * **Scalable Expertise:** The conceptual use of AI agents to showcase our forward-thinking approach to service delivery.
-* **British English:** Consistent use of British English to maintain a professional, international tone.
+* **British English:** Consistent use of British English throughout all content, including spellings (-ise endings, -our endings, -re endings), terminology (programme, organisation, centre), and grammar to maintain a professional, international tone.
 
 ---
 

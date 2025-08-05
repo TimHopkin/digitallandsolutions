@@ -48,8 +48,28 @@
                 <li><a href="#partnerships">Partnerships</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="#solutions">Solutions</a></li>
+            <li><a href="#impact">Impact</a></li>
+            <li><a href="thought-leadership.html">Thought Leadership</a></li>
+            <li><a href="#partnerships">Partnerships</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section id="home" class="hero-section">
@@ -110,12 +130,12 @@
                 </div>
                 <div class="card">
                     <h3>Strategic Land Use Prioritization</h3>
-                    <p>Monitor and analyze land use changes to identify and prioritize areas where intervention will have the greatest impact on national resilience, from local holdings to continental ecosystems.</p>
+                    <p>Monitor and analyse land use changes to identify and prioritise areas where intervention will have the greatest impact on national resilience, from local holdings to continental ecosystems.</p>
                     <ul style="color: var(--secondary-grey); margin-bottom: 1.5rem;">
                         <li>Satellite-based change detection</li>
-                        <li>Resilience impact modeling</li>
+                        <li>Resilience impact modelling</li>
                         <li>Priority area identification</li>
-                        <li>Resource allocation optimization</li>
+                        <li>Resource allocation optimisation</li>
                     </ul>
                     <a href="#" class="btn btn-secondary">Learn More</a>
                 </div>
@@ -421,6 +441,45 @@
             } else {
                 navbar.style.backgroundColor = '#ffffff';
                 navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
+        const body = document.body;
+
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenuOverlay.classList.toggle('active');
+            body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.classList.remove('active');
+            body.style.overflow = '';
+        }
+
+        // Toggle menu on button click
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+        // Close menu on overlay click
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        // Close menu on menu link click
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
             }
         });
 
