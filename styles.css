@@ -1592,3 +1592,214 @@ p {
 .py-4 {
     padding: 4rem 0;
 }
+
+/* Ethics & Principles Page Styles */
+.principle-card {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.principle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-green) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.principle-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.principle-card:hover::before {
+    opacity: 1;
+}
+
+
+.principle-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    margin: 0 0 2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.principle-section {
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.principle-section:last-child {
+    margin-bottom: 0;
+}
+
+.principle-section h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+}
+
+.principle-section h4::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.principle-section p {
+    color: var(--secondary-grey);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.principle-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.principle-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.principle-icon svg {
+    width: 60px;
+    height: 60px;
+    color: white;
+    z-index: 2;
+    position: relative;
+}
+
+.principle-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.integrity-icon::before {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #0066cc 100%);
+}
+
+.transparency-icon::before {
+    background: linear-gradient(135deg, var(--accent-green) 0%, #00cc66 100%);
+}
+
+.innovation-icon::before {
+    background: linear-gradient(135deg, #663399 0%, #9966cc 100%);
+}
+
+.collaboration-icon::before {
+    background: linear-gradient(135deg, #CC6600 0%, #ff9933 100%);
+}
+
+.impact-icon::before {
+    background: linear-gradient(135deg, var(--secondary-grey) 0%, #999999 100%);
+}
+
+.principle-card:hover .principle-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.principle-card:hover .principle-icon::before {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
+.card-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .principle-card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    
+    .principle-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .principle-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 2rem;
+    }
+    
+    .principle-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .grid.grid-2 {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .principle-visual {
+        order: -1;
+    }
+}
+
+/* Additional visual enhancements */
+.principle-card .principle-content {
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 153, 51, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section .container {
+    position: relative;
+    z-index: 1;
+}
