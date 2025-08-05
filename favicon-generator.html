@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator - Digital Land Solutions</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        .favicon-preview { display: flex; gap: 20px; align-items: center; margin: 20px 0; }
+        .size-box { text-align: center; padding: 10px; border: 1px solid #ddd; border-radius: 4px; }
+        .instructions { background: #e8f4fd; padding: 15px; border-radius: 4px; margin: 20px 0; }
+        canvas { border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Digital Land Solutions - Favicon Generator</h1>
+        <p>Use this page to manually create PNG favicon files from your SVG logo.</p>
+        
+        <div class="favicon-preview">
+            <div class="size-box">
+                <h3>16x16</h3>
+                <canvas id="canvas16" width="16" height="16"></canvas>
+                <br><button onclick="downloadFavicon('canvas16', 'favicon-16x16.png')">Download PNG</button>
+            </div>
+            
+            <div class="size-box">
+                <h3>32x32</h3>
+                <canvas id="canvas32" width="32" height="32"></canvas>
+                <br><button onclick="downloadFavicon('canvas32', 'favicon-32x32.png')">Download PNG</button>
+            </div>
+            
+            <div class="size-box">
+                <h3>48x48</h3>
+                <canvas id="canvas48" width="48" height="48"></canvas>
+                <br><button onclick="downloadFavicon('canvas48', 'favicon-48x48.png')">Download PNG</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>Instructions:</h3>
+            <ol>
+                <li>The canvases above show your favicon at different sizes</li>
+                <li>Click "Download PNG" buttons to save each size</li>
+                <li>Save the files to: <code>assets/images/</code></li>
+                <li>Update the HTML favicon links to use the PNG files instead of SVG</li>
+            </ol>
+        </div>
+        
+        <h3>Original SVG Logo:</h3>
+        <img src="assets/images/favicon.svg" alt="Original SVG" style="width: 64px; height: 64px; border: 1px solid #ddd;">
+    </div>
+
+    <script>
+        // Load and render the SVG to different canvas sizes
+        function loadSVG() {
+            const svgData = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+                <defs>
+                    <linearGradient id="earthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#009933;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#007a29;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#004080;stop-opacity:0.8" />
+                    </linearGradient>
+                </defs>
+                <circle cx="16" cy="16" r="14" fill="url(#earthGradient)" stroke="#003366" stroke-width="1"/>
+                <path d="M8 12 Q12 8 16 10 Q20 8 24 12 Q22 16 18 18 Q16 20 14 18 Q10 16 8 12 Z" fill="#003366" opacity="0.8"/>
+                <path d="M6 18 Q8 16 10 18 Q12 22 9 24 Q6 22 4 20 Q4 18 6 18 Z" fill="#003366" opacity="0.8"/>
+                <path d="M22 20 Q24 18 26 20 Q28 22 26 24 Q24 26  22 24 Q20 22 22 20 Z" fill="#003366" opacity="0.8"/>
+                <g stroke="url(#networkGradient)" stroke-width="1" fill="none" opacity="0.9">
+                    <path d="M2 16 Q16 12 30 16"/>
+                    <path d="M2 16 Q16 20 30 16"/>
+                    <path d="M16 2 Q12 16 16 30"/>
+                    <path d="M16 2 Q20 16 16 30"/>
+                    <circle cx="16" cy="16" r="1.5" fill="#009933"/>
+                    <circle cx="10" cy="13" r="1" fill="#003366"/>
+                    <circle cx="22" cy="13" r="1" fill="#003366"/>
+                    <circle cx="13" cy="22" r="1" fill="#003366"/>
+                    <circle cx="19" cy="22" r="1" fill="#003366"/>
+                </g>
+            </svg>`;
+            
+            renderToCanvas('canvas16', svgData, 16);
+            renderToCanvas('canvas32', svgData, 32);
+            renderToCanvas('canvas48', svgData, 48);
+        }
+        
+        function renderToCanvas(canvasId, svgData, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            const blob = new Blob([svgData], {type: 'image/svg+xml'});
+            const url = URL.createObjectURL(blob);
+            
+            img.onload = function() {
+                ctx.clearRect(0, 0, size, size);
+                ctx.drawImage(img, 0, 0, size, size);
+                URL.revokeObjectURL(url);
+            };
+            img.src = url;
+        }
+        
+        function downloadFavicon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Load SVG when page loads
+        window.onload = loadSVG;
+    </script>
+</body>
+</html>

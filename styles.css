@@ -434,6 +434,18 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    gap: 0.75rem;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.logo-image:hover {
+    transform: scale(1.05);
 }
 
 .logo {
@@ -441,6 +453,11 @@ p {
     font-weight: 700;
     color: var(--primary-blue);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--accent-green);
 }
 
 .nav-menu {
@@ -646,6 +663,109 @@ p {
     .partner-logo {
         height: 50px;
         max-width: 100px;
+    }
+    
+    .navbar .container {
+        gap: 0.5rem;
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+}
+
+/* Brand Guidelines Specific Styles */
+.logo-showcase {
+    transition: transform 0.3s ease;
+}
+
+.logo-showcase:hover {
+    transform: scale(1.05);
+}
+
+.color-swatch {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-swatch:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.brand-guidelines h3 {
+    color: var(--primary-blue);
+    border-bottom: 2px solid var(--accent-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.usage-do {
+    border-left: 4px solid var(--accent-green);
+    padding-left: 1rem;
+}
+
+.usage-dont {
+    border-left: 4px solid #cc0000;
+    padding-left: 1rem;
+}
+
+.asset-download {
+    background: linear-gradient(135deg, var(--light-grey) 0%, rgba(0, 153, 51, 0.1) 100%);
+    border: 2px dashed var(--accent-green);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.asset-download:hover {
+    background: linear-gradient(135deg, rgba(0, 153, 51, 0.1) 0%, var(--light-grey) 100%);
+    transform: translateY(-2px);
+}
+
+.brand-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.brand-hero h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.brand-hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .usage-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .brand-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .brand-hero p {
+        font-size: 1.1rem;
     }
 }
 

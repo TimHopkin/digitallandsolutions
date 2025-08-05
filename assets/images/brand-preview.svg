@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#009933;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="earthGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#009933;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#007a29;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="networkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#003366;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#004080;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Overlay pattern -->
+  <g opacity="0.1">
+    <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="2" fill="white"/>
+    </pattern>
+    <rect width="1200" height="630" fill="url(#dots)"/>
+  </g>
+  
+  <!-- Large Globe Logo -->
+  <g transform="translate(200, 180)">
+    <!-- Globe/Earth base -->
+    <circle cx="120" cy="120" r="90" fill="url(#earthGradient)" stroke="#ffffff" stroke-width="3"/>
+    
+    <!-- Land masses -->
+    <path d="M60 90 Q90 60 120 75 Q150 60 180 90 Q165 120 135 135 Q120 150 105 135 Q75 120 60 90 Z" fill="#ffffff" opacity="0.8"/>
+    <path d="M45 135 Q60 120 75 135 Q90 165 67.5 180 Q45 165 30 150 Q30 135 45 135 Z" fill="#ffffff" opacity="0.8"/>
+    <path d="M165 150 Q180 135 195 150 Q210 165 195 180 Q180 195 165 180 Q150 165 165 150 Z" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- Digital network overlay -->
+    <g stroke="white" stroke-width="2" fill="none" opacity="0.9">
+      <!-- Grid lines -->
+      <path d="M30 120 Q120 90 210 120"/>
+      <path d="M30 120 Q120 150 210 120"/>
+      <path d="M120 30 Q90 120 120 210"/>
+      <path d="M120 30 Q150 120 120 210"/>
+      
+      <!-- Connection nodes -->
+      <circle cx="75" cy="105" r="4" fill="white"/>
+      <circle cx="165" cy="105" r="4" fill="white"/>
+      <circle cx="105" cy="165" r="4" fill="white"/>
+      <circle cx="135" cy="165" r="4" fill="white"/>
+      <circle cx="120" cy="120" r="6" fill="#009933"/>
+    </g>
+  </g>
+  
+  <!-- Main Title -->
+  <text x="600" y="250" font-family="Inter, Arial, sans-serif" font-size="64" font-weight="700" fill="white" text-anchor="middle">
+    Brand Guidelines
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="320" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="500" fill="rgba(255,255,255,0.9)" text-anchor="middle">
+    Digital Land Solutions
+  </text>
+  
+  <!-- Description -->
+  <text x="600" y="380" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="400" fill="rgba(255,255,255,0.8)" text-anchor="middle">
+    Official brand identity, logo usage, and style guidelines
+  </text>
+  
+  <!-- Brand Elements Preview -->
+  <g transform="translate(650, 420)">
+    <!-- Color Swatches -->
+    <rect x="0" y="0" width="60" height="60" fill="#003366" rx="8"/>
+    <rect x="80" y="0" width="60" height="60" fill="#009933" rx="8"/>
+    <rect x="160" y="0" width="60" height="60" fill="#666666" rx="8"/>
+    
+    <!-- Typography Sample -->
+    <text x="0" y="100" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600" fill="white">
+      Professional • Trustworthy • Innovative
+    </text>
+  </g>
+  
+  <!-- Website URL -->
+  <text x="600" y="580" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="400" fill="rgba(255,255,255,0.7)" text-anchor="middle">
+    digitallandsolutions.org/brand-guidelines
+  </text>
+</svg>

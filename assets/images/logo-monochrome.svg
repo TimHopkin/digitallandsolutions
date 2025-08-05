@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50" height="50">
+  <!-- Globe/Earth base -->
+  <circle cx="25" cy="25" r="18" fill="#333333" stroke="#333333" stroke-width="1"/>
+  
+  <!-- Land masses (monochrome) -->
+  <path d="M15 20 Q20 15 25 18 Q30 16 35 20 Q32 25 28 28 Q25 30 22 28 Q18 25 15 20 Z" fill="#ffffff" opacity="1"/>
+  <path d="M12 28 Q15 25 18 28 Q20 32 16 35 Q12 33 10 30 Q10 28 12 28 Z" fill="#ffffff" opacity="1"/>
+  <path d="M30 30 Q33 28 36 30 Q38 33 35 35 Q32 37 30 34 Q28 32 30 30 Z" fill="#ffffff" opacity="1"/>
+  
+  <!-- Digital network overlay -->
+  <g stroke="#666666" stroke-width="1" fill="none" opacity="0.8">
+    <!-- Grid lines -->
+    <path d="M7 25 Q25 20 43 25"/>
+    <path d="M7 25 Q25 30 43 25"/>
+    <path d="M25 7 Q20 25 25 43"/>
+    <path d="M25 7 Q30 25 25 43"/>
+    
+    <!-- Connection nodes -->
+    <circle cx="15" cy="22" r="1.5" fill="#333333"/>
+    <circle cx="35" cy="22" r="1.5" fill="#333333"/>
+    <circle cx="22" cy="15" r="1.5" fill="#333333"/>
+    <circle cx="28" cy="35" r="1.5" fill="#333333"/>
+    <circle cx="25" cy="25" r="2" fill="#333333"/>
+  </g>
+</svg>
