@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Impact Dashboard - Digital Land Solutions</title>
+    <meta name="description" content="Real-time visibility into Digital Land Solutions' global impact, demonstrating measurable outcomes across land governance projects worldwide.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Digital Land Solutions</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#impact">Impact</a></li>
+                <li><a href="dashboard.html" class="active">Live Dashboard</a></li>
+                <li><a href="index.html#partnerships">Partnerships</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Hero -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1>Live Impact Dashboard</h1>
+            <p>Real-time transparency into our global land governance impact. Updated continuously to demonstrate measurable outcomes across all Digital Land Solutions projects worldwide.</p>
+            <div class="dashboard-status">
+                <span class="status-indicator"></span>
+                <span>Live Data • Updated <span id="last-updated">just now</span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Impact Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="dashboard-filters">
+                <div class="filter-group">
+                    <label for="region-filter">Region:</label>
+                    <select id="region-filter">
+                        <option value="all">All Regions</option>
+                        <option value="africa">Africa</option>
+                        <option value="asia">Asia</option>
+                        <option value="latin-america">Latin America</option>
+                        <option value="pacific">Pacific</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="project-filter">Project Type:</label>
+                    <select id="project-filter">
+                        <option value="all">All Projects</option>
+                        <option value="land-registry">Land Registry</option>
+                        <option value="environmental">Environmental Monitoring</option>
+                        <option value="dispute-resolution">Dispute Resolution</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="timeframe-filter">Timeframe:</label>
+                    <select id="timeframe-filter">
+                        <option value="all">All Time</option>
+                        <option value="year">Past Year</option>
+                        <option value="quarter">Past Quarter</option>
+                        <option value="month">Past Month</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Key Metrics Grid -->
+            <div class="metrics-grid">
+                <div class="metric-card highlight">
+                    <div class="metric-icon">🌍</div>
+                    <div class="metric-number" data-target="15">0</div>
+                    <div class="metric-label">Countries Served</div>
+                    <div class="metric-trend positive">+2 this quarter</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🏠</div>
+                    <div class="metric-number" data-target="2300000" data-suffix=" M">0</div>
+                    <div class="metric-label">Land Assets Secured</div>
+                    <div class="metric-trend positive">+12% this month</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">🌱</div>
+                    <div class="metric-number" data-target="450000" data-suffix=" K">0</div>
+                    <div class="metric-label">Hectares Monitored</div>
+                    <div class="metric-trend positive">+8% this month</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">⚖️</div>
+                    <div class="metric-number" data-target="1200">0</div>
+                    <div class="metric-label">Disputes Resolved</div>
+                    <div class="metric-trend positive">+15 this week</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-number" data-target="847" data-prefix="$" data-suffix=" M">0</div>
+                    <div class="metric-label">Economic Value Protected</div>
+                    <div class="metric-trend positive">+23% this quarter</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-number" data-target="125000">0</div>
+                    <div class="metric-label">Citizens Empowered</div>
+                    <div class="metric-trend positive">+3,200 this week</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive World Map -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="text-center">Global Impact Map</h2>
+            <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem;">Explore our active projects worldwide. Click on countries to view detailed impact metrics and project information.</p>
+            
+            <div class="map-container">
+                <div class="map-controls">
+                    <div class="map-legend">
+                        <div class="legend-item">
+                            <div class="legend-color active"></div>
+                            <span>Active Projects</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color completed"></div>
+                            <span>Completed Projects</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color planned"></div>
+                            <span>Planned Projects</span>
+                        </div>
+                    </div>
+                    <div class="map-view-controls">
+                        <button id="world-view-btn" class="map-control-btn active">World View</button>
+                        <button id="satellite-view-btn" class="map-control-btn">Satellite</button>
+                    </div>
+                </div>
+                <div class="world-map" id="world-map">
+                    <!-- Leaflet Map will be initialized here -->
+                </div>
+            </div>
+
+            <!-- Country Detail Panel -->
+            <div class="country-detail" id="country-detail" style="display: none;">
+                <div class="country-header">
+                    <h3 id="country-name">Select a Country</h3>
+                    <button class="close-btn" id="close-detail">&times;</button>
+                </div>
+                <div class="country-metrics">
+                    <div class="country-stat">
+                        <span class="stat-value" id="country-projects">0</span>
+                        <span class="stat-label">Active Projects</span>
+                    </div>
+                    <div class="country-stat">
+                        <span class="stat-value" id="country-assets">0</span>
+                        <span class="stat-label">Assets Secured</span>
+                    </div>
+                    <div class="country-stat">
+                        <span class="stat-value" id="country-area">0</span>
+                        <span class="stat-label">Hectares Monitored</span>
+                    </div>
+                </div>
+                <div class="country-projects" id="country-projects-list">
+                    <!-- Project details will be populated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualisations -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Impact Analytics</h2>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Project Growth Over Time</h3>
+                    <canvas id="growth-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Regional Distribution</h3>
+                    <canvas id="regional-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Project Types</h3>
+                    <canvas id="project-types-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Environmental Impact</h3>
+                    <canvas id="environmental-chart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SDG Impact -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Sustainable Development Goals Impact</h2>
+                <p style="max-width: 600px; margin: 0 auto;">Our projects directly contribute to multiple UN Sustainable Development Goals, creating measurable progress towards global sustainability targets.</p>
+            </div>
+            <div class="sdg-grid">
+                <div class="sdg-card" data-sdg="1">
+                    <div class="sdg-icon">🎯</div>
+                    <div class="sdg-title">No Poverty</div>
+                    <div class="sdg-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 78%"></div>
+                        </div>
+                        <span class="progress-text">78% of targets achieved</span>
+                    </div>
+                </div>
+                <div class="sdg-card" data-sdg="2">
+                    <div class="sdg-icon">🌾</div>
+                    <div class="sdg-title">Zero Hunger</div>
+                    <div class="sdg-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65% of targets achieved</span>
+                    </div>
+                </div>
+                <div class="sdg-card" data-sdg="15">
+                    <div class="sdg-icon">🌳</div>
+                    <div class="sdg-title">Life on Land</div>
+                    <div class="sdg-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 92%"></div>
+                        </div>
+                        <span class="progress-text">92% of targets achieved</span>
+                    </div>
+                </div>
+                <div class="sdg-card" data-sdg="16">
+                    <div class="sdg-icon">⚖️</div>
+                    <div class="sdg-title">Peace & Justice</div>
+                    <div class="sdg-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 84%"></div>
+                        </div>
+                        <span class="progress-text">84% of targets achieved</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Activity Feed -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Live Activity Feed</h2>
+            <div class="activity-feed" id="activity-feed">
+                <!-- Activity items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4>Digital Land Solutions</h4>
+                    <p>Empowering nations to build secure, transparent, and democratic land economies through innovative technology and expert guidance.</p>
+                </div>
+                <div>
+                    <h4>Solutions</h4>
+                    <p><a href="index.html#solutions">Land Registry Modernisation</a></p>
+                    <p><a href="index.html#solutions">Sustainable Land Use</a></p>
+                    <p><a href="index.html#solutions">Environmental Monitoring</a></p>
+                    <p><a href="index.html#solutions">Digital Services</a></p>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <p><a href="index.html#about">About Us</a></p>
+                    <p><a href="index.html#partnerships">Leadership Team</a></p>
+                    <p><a href="index.html#careers">Careers</a></p>
+                    <p><a href="index.html#partnerships">Partnerships</a></p>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <p><a href="index.html#impact">Case Studies</a></p>
+                    <p><a href="index.html#thought-leadership">White Papers</a></p>
+                    <p><a href="dashboard.html">Open Dashboard</a></p>
+                    <p><a href="index.html#contact">Contact Us</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Digital Land Solutions. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

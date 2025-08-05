@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thought Leadership - Digital Land Solutions</title>
+    <meta name="description" content="Explore Digital Land Solutions' thought leadership articles on land governance, environmental sustainability, and technology innovation.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Digital Land Solutions</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="index.html#impact">Impact</a></li>
+                <li><a href="thought-leadership.html" class="active">Thought Leadership</a></li>
+                <li><a href="index.html#partnerships">Partnerships</a></li>
+                <li><a href="index.html#careers">Careers</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" style="background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-green) 100%); min-height: 40vh;">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 1rem;">Thought Leadership</h1>
+            <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; max-width: 800px;">Exploring the intersection of technology, governance, and sustainability to build a more prosperous and equitable world.</p>
+        </div>
+    </section>
+
+    <!-- Thought Leadership Content -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="blog-filters">
+                <button class="filter-btn active" data-category="all">All Articles <span class="filter-count">(20)</span></button>
+                <button class="filter-btn" data-category="economics">Economics & Policy <span class="filter-count">(5)</span></button>
+                <button class="filter-btn" data-category="technology">Technology & Innovation <span class="filter-count">(5)</span></button>
+                <button class="filter-btn" data-category="international">International Relations <span class="filter-count">(5)</span></button>
+                <button class="filter-btn" data-category="environment">Environment & Future <span class="filter-count">(5)</span></button>
+            </div>
+            
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blog-grid">
+                
+                <!-- Article 1 -->
+                <article class="blog-card" data-category="economics" data-id="1">
+                    <div class="blog-card-category">Economics & Policy</div>
+                    <h3>The Silent Asset: Valuing Nature in National GDP</h3>
+                    <p class="blog-card-subtitle">Why traditional economic models are failing to account for the most critical component of a nation's wealth.</p>
+                    <p class="blog-card-excerpt">For decades, economists have calculated a nation's prosperity through GDP, yet this fundamental metric overlooks the most valuable asset of all: the natural capital that underpins every economy on Earth.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="1">Read Full Article</button>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="blog-card" data-category="international" data-id="2">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>The New National Security: How Nature Mitigates Risk</h3>
+                    <p class="blog-card-subtitle">Linking ecosystem degradation to national instability, conflict, and economic volatility.</p>
+                    <p class="blog-card-excerpt">National security strategists are awakening to a fundamental truth: environmental stability is the foundation upon which all other forms of security rest.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="2">Read Full Article</button>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="blog-card" data-category="international" data-id="3">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>Beyond Borders: The Value of Pan-National Collaboration</h3>
+                    <p class="blog-card-subtitle">How shared data and coordinated action are essential for protecting interconnected ecosystems and building regional stability.</p>
+                    <p class="blog-card-excerpt">Ecosystems don't recognise borders. Rivers flow between nations, migratory species cross continents, and atmospheric systems circle the globe.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="3">Read Full Article</button>
+                </article>
+
+                <!-- Article 4 -->
+                <article class="blog-card" data-category="environment" data-id="4">
+                    <div class="blog-card-category">Environment & Future</div>
+                    <h3>The Business of Nature: Why Public and Private Co-Investment is the Future</h3>
+                    <p class="blog-card-subtitle">Mobilising private capital to restore ecosystems and generate sustainable returns.</p>
+                    <p class="blog-card-excerpt">The global financing gap for environmental restoration is staggering: $4.1 trillion needed annually by 2030 to meet climate and biodiversity targets.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>9 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="4">Read Full Article</button>
+                </article>
+
+                <!-- Article 5 -->
+                <article class="blog-card" data-category="technology" data-id="5">
+                    <div class="blog-card-category">Technology & Innovation</div>
+                    <h3>The Human-First AI: Building a Thriving Future in the Age of Automation</h3>
+                    <p class="blog-card-subtitle">Ensuring that technology serves humanity's fundamental needs, starting with the health of our planet.</p>
+                    <p class="blog-card-excerpt">As artificial intelligence reshapes every aspect of human society, we face a critical choice: will we use this power to extract more from our planet, or to heal it?</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="5">Read Full Article</button>
+                </article>
+
+                <!-- Article 6 -->
+                <article class="blog-card" data-category="international" data-id="6">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>Land and Law: Modernising Registries to Fortify Democracy</h3>
+                    <p class="blog-card-subtitle">The link between secure land tenure, anti-corruption efforts, and the rule of law.</p>
+                    <p class="blog-card-excerpt">Outdated land registries are democracy's Achilles heel, creating opportunities for corruption and undermining citizens' fundamental rights to property ownership.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="6">Read Full Article</button>
+                </article>
+
+                <!-- Article 7 -->
+                <article class="blog-card" data-category="international" data-id="7">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>From Conflict to Collaboration: Using Data to Resolve Land Disputes</h3>
+                    <p class="blog-card-subtitle">How technology can provide an impartial foundation for mediation and dispute resolution.</p>
+                    <p class="blog-card-excerpt">Land disputes fuel conflicts worldwide, but objective, verifiable data can transform these sources of tension into opportunities for community building.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="7">Read Full Article</button>
+                </article>
+
+                <!-- Article 8 -->
+                <article class="blog-card" data-category="environment" data-id="8">
+                    <div class="blog-card-category">Environment & Future</div>
+                    <h3>Life with Abundance: A Future Defined by Nature's Recovery</h3>
+                    <p class="blog-card-subtitle">What the world looks like when nations prioritise ecological restoration and sustainability.</p>
+                    <p class="blog-card-excerpt">Imagine a world where thriving ecosystems support abundant food systems, clean air and water are guaranteed, and sustainable prosperity creates opportunity for all.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="8">Read Full Article</button>
+                </article>
+
+                <!-- Article 9 -->
+                <article class="blog-card" data-category="environment" data-id="9">
+                    <div class="blog-card-category">Environment & Future</div>
+                    <h3>The Challenge of Our Time: Restoring Nature on a Global Scale</h3>
+                    <p class="blog-card-subtitle">A call to action for governments to make ecological restoration a central pillar of national policy.</p>
+                    <p class="blog-card-excerpt">The climate and biodiversity crises represent the greatest challenge in human history, but also the greatest opportunity.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="9">Read Full Article</button>
+                </article>
+
+                <!-- Article 10 -->
+                <article class="blog-card" data-category="economics" data-id="10">
+                    <div class="blog-card-category">Economics & Policy</div>
+                    <h3>The Land-GDP Nexus: Why Nations Need Natural Abundance</h3>
+                    <p class="blog-card-subtitle">Exploring the direct correlation between ecological health and long-term economic growth.</p>
+                    <p class="blog-card-excerpt">Countries with healthy ecosystems consistently outperform in economic resilience, investment attraction, and sustainable growth.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="10">Read Full Article</button>
+                </article>
+
+                <!-- Article 11 -->
+                <article class="blog-card" data-category="economics" data-id="11">
+                    <div class="blog-card-category">Economics & Policy</div>
+                    <h3>The Global Economy's Bedrock: How Natural Systems Underpin Everything</h3>
+                    <p class="blog-card-subtitle">From agriculture and tourism to pharmaceuticals and global supply chains, a look at what is at stake.</p>
+                    <p class="blog-card-excerpt">Every sector of the global economy depends fundamentally on natural systems, yet this dependency remains largely invisible in financial markets.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="11">Read Full Article</button>
+                </article>
+
+                <!-- Article 12 -->
+                <article class="blog-card" data-category="international" data-id="12">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>The Power of Openness: Why Data Transparency is the New Diplomacy</h3>
+                    <p class="blog-card-subtitle">How sharing anonymised land data can build cross-border trust and reduce geopolitical tensions.</p>
+                    <p class="blog-card-excerpt">Open environmental data creates unprecedented opportunities for trust-building between nations.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="12">Read Full Article</button>
+                </article>
+
+                <!-- Article 13 -->
+                <article class="blog-card" data-category="technology" data-id="13">
+                    <div class="blog-card-category">Technology & Innovation</div>
+                    <h3>From Vague Commitments to Verified Impact: The Role of Technology in Sustainability</h3>
+                    <p class="blog-card-subtitle">How digital land systems can turn national climate pledges into measurable, auditable realities.</p>
+                    <p class="blog-card-excerpt">The era of unverifiable sustainability claims is ending. Advanced monitoring technology makes it possible to track and verify environmental commitments in real-time.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="13">Read Full Article</button>
+                </article>
+
+                <!-- Article 14 -->
+                <article class="blog-card" data-category="technology" data-id="14">
+                    <div class="blog-card-category">Technology & Innovation</div>
+                    <h3>Building with AI: A New Paradigm for Land Policy and Management</h3>
+                    <p class="blog-card-subtitle">How intelligent agents can assist policymakers in making data-driven decisions at unprecedented speed and scale.</p>
+                    <p class="blog-card-excerpt">AI agents can analyse vast datasets to forecast land-use trends, model policy impacts, and streamline bureaucratic processes.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>8 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="14">Read Full Article</button>
+                </article>
+
+                <!-- Article 15 -->
+                <article class="blog-card" data-category="economics" data-id="15">
+                    <div class="blog-card-category">Economics & Policy</div>
+                    <h3>The New Gold Rush: The Economics of Ecosystem Restoration</h3>
+                    <p class="blog-card-subtitle">Why investing in the rewilding and restoration of landscapes is the next great economic opportunity.</p>
+                    <p class="blog-card-excerpt">Ecosystem restoration isn't just an environmental imperative—it's an emerging economic sector with enormous growth potential.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="15">Read Full Article</button>
+                </article>
+
+                <!-- Article 16 -->
+                <article class="blog-card" data-category="technology" data-id="16">
+                    <div class="blog-card-category">Technology & Innovation</div>
+                    <h3>The Decentralised Cadastre: The Future of Land Records in a Trustless World</h3>
+                    <p class="blog-card-subtitle">Exploring the potential of blockchain and distributed ledgers to secure land ownership and prevent fraud.</p>
+                    <p class="blog-card-excerpt">Blockchain technology offers the possibility of tamper-proof land records that don't depend on central authorities for their integrity.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="16">Read Full Article</button>
+                </article>
+
+                <!-- Article 17 -->
+                <article class="blog-card" data-category="international" data-id="17">
+                    <div class="blog-card-category">International Relations</div>
+                    <h3>Data as Diplomacy: The UN's Path to Peace Through Collaborative Mapping</h3>
+                    <p class="blog-card-subtitle">How the UN and other international bodies can use shared land data to predict and prevent conflicts.</p>
+                    <p class="blog-card-excerpt">Shared environmental monitoring can provide early warning systems for resource conflicts while creating frameworks for collaborative response.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="17">Read Full Article</button>
+                </article>
+
+                <!-- Article 18 -->
+                <article class="blog-card" data-category="environment" data-id="18">
+                    <div class="blog-card-category">Environment & Future</div>
+                    <h3>From Fragmentation to Cohesion: The Power of Landscape-Level Thinking</h3>
+                    <p class="blog-card-subtitle">Managing land as an interconnected system, not a collection of isolated parcels.</p>
+                    <p class="blog-card-excerpt">Ecosystems function as integrated wholes, yet governance systems typically manage land parcel by parcel.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>5 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="18">Read Full Article</button>
+                </article>
+
+                <!-- Article 19 -->
+                <article class="blog-card" data-category="technology" data-id="19">
+                    <div class="blog-card-category">Technology & Innovation</div>
+                    <h3>The Responsible Technologist: DLS's Commitment to Ethical AI</h3>
+                    <p class="blog-card-subtitle">Our pledge to build AI systems that are transparent, accountable, and aligned with human values.</p>
+                    <p class="blog-card-excerpt">At Digital Land Solutions, we recognize that AI systems affecting land governance and environmental outcomes must be designed with the highest ethical standards.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>7 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="19">Read Full Article</button>
+                </article>
+
+                <!-- Article 20 -->
+                <article class="blog-card" data-category="economics" data-id="20">
+                    <div class="blog-card-category">Economics & Policy</div>
+                    <h3>The Partnership Dividend: Maximising Impact Through Our Global Network</h3>
+                    <p class="blog-card-subtitle">How collaboration with governments, NGOs, and the private sector multiplies our collective ability to build a better world.</p>
+                    <p class="blog-card-excerpt">Digital Land Solutions serves as a technological hub that empowers a global network of partners to achieve far more than any single organization could accomplish alone.</p>
+                    <div class="blog-card-meta">
+                        <span>January 2025</span>
+                        <span>•</span>
+                        <span>6 min read</span>
+                    </div>
+                    <button class="btn btn-secondary read-more-btn" data-article="20">Read Full Article</button>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Article Modal -->
+    <div id="article-modal" class="article-modal">
+        <div class="article-modal-content">
+            <button class="article-modal-close">&times;</button>
+            <div id="article-modal-body">
+                <!-- Article content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <h4>Digital Land Solutions</h4>
+                    <p>Empowering nations to build secure, transparent, and democratic land economies through innovative technology and expert guidance.</p>
+                </div>
+                <div>
+                    <h4>Solutions</h4>
+                    <p><a href="index.html#solutions">Land Registry Modernisation</a></p>
+                    <p><a href="index.html#solutions">Sustainable Land Use</a></p>
+                    <p><a href="index.html#solutions">Environmental Monitoring</a></p>
+                    <p><a href="index.html#solutions">Digital Services</a></p>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <p><a href="index.html#about">About Us</a></p>
+                    <p><a href="index.html#about">Leadership Team</a></p>
+                    <p><a href="index.html#careers">Careers</a></p>
+                    <p><a href="index.html#partnerships">Partnerships</a></p>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <p><a href="index.html#impact">Case Studies</a></p>
+                    <p><a href="thought-leadership.html">Thought Leadership</a></p>
+                    <p><a href="dashboard.html">Open Dashboard</a></p>
+                    <p><a href="index.html#contact">Contact Us</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Digital Land Solutions. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backgroundColor = '#ffffff';
+                navbar.style.backdropFilter = 'none';
+            }
+        });
+
+        // Blog Filtering Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+            const modal = document.getElementById('article-modal');
+            const modalBody = document.getElementById('article-modal-body');
+            const closeBtn = document.querySelector('.article-modal-close');
+
+            // Filter functionality
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Update active filter button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter blog cards
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        
+                        if (category === 'all' || cardCategory === category) {
+                            card.style.display = 'block';
+                            card.classList.add('show');
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.remove('show');
+                        }
+                    });
+                });
+            });
+
+            // Article modal functionality with sample content
+            const articleData = {
+                1: {
+                    category: 'Economics & Policy',
+                    title: 'The Silent Asset: Valuing Nature in National GDP',
+                    subtitle: 'Why traditional economic models are failing to account for the most critical component of a nation\'s wealth.',
+                    content: `
+                        <p class="lead">For decades, economists have calculated a nation's prosperity through Gross Domestic Product, measuring the monetary value of goods and services produced. Yet this fundamental metric overlooks the most valuable asset of all: the natural capital that underpins every economy on Earth.</p>
+                        
+                        <p>From the pollination services that enable $235 billion in global agricultural production to the carbon sequestration that prevents trillions in climate damage, nature provides economic value that dwarfs traditional sectors. The time has come to formally integrate this "silent asset" into national accounting.</p>
+                        
+                        <h3>The Hidden Economy of Nature</h3>
+                        <p>Consider Rwanda's remarkable transformation. After the 1994 genocide, the country invested heavily in reforestation and ecosystem restoration. Today, Rwanda's natural capital contributes an estimated 35% to its GDP—yet this contribution remains invisible in traditional economic measurements.</p>
+                        
+                        <p>This pattern repeats globally. Costa Rica's payment for ecosystem services program recognises that its forests are worth more standing than cut down, generating sustainable revenue while preserving biodiversity.</p>
+                        
+                        <h3>The Digital Advantage</h3>
+                        <p>Modern technology makes natural capital accounting practical at scale. Digital Land Solutions' platform already tracks these metrics for governments worldwide, providing the data foundation necessary for natural capital accounting.</p>
+                        
+                        <div class="article-cta">
+                            <p><strong>Ready to integrate natural capital accounting into your national systems?</strong></p>
+                            <a href="index.html#contact" class="btn btn-primary">Contact Our Team</a>
+                        </div>
+                    `
+                },
+                2: {
+                    category: 'International Relations',
+                    title: 'The New National Security: How Nature Mitigates Risk',
+                    subtitle: 'Linking ecosystem degradation to national instability, conflict, and economic volatility.',
+                    content: `
+                        <p class="lead">National security strategists are awakening to a fundamental truth: environmental stability is the foundation upon which all other forms of security rest. From water wars to climate-induced migration, ecosystem degradation is increasingly the root cause of geopolitical instability.</p>
+                        
+                        <p>The Syrian conflict offers a stark example. Between 2007 and 2010, the country experienced its worst drought in 900 years, forcing 1.5 million rural residents to migrate to urban areas.</p>
+                        
+                        <h3>The Security-Environment Nexus</h3>
+                        <p>Environmental degradation threatens national security through five primary pathways: resource conflicts, forced migration, supply chain disruption, economic volatility, and state fragility.</p>
+                        
+                        <h3>Intelligence Through Data</h3>
+                        <p>Digital Land Solutions' platform provides governments with real-time environmental intelligence, generating alerts when conditions approach critical thresholds that historically trigger social unrest.</p>
+                        
+                        <div class="article-cta">
+                            <p><strong>Integrate environmental intelligence into your national security framework.</strong></p>
+                            <a href="index.html#contact" class="btn btn-primary">Learn More</a>
+                        </div>
+                    `
+                }
+                // Sample articles - in production you'd have all 20 with full content
+            };
+
+            // Handle read more button clicks
+            document.querySelectorAll('.read-more-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const articleId = this.getAttribute('data-article');
+                    const article = articleData[articleId];
+                    
+                    if (article) {
+                        modalBody.innerHTML = `
+                            <div class="article-header">
+                                <span class="article-category">${article.category}</span>
+                                <h1>${article.title}</h1>
+                                <h2 class="article-subtitle">${article.subtitle}</h2>
+                                <div class="article-meta">Published January 2025 • 8 min read</div>
+                            </div>
+                            <div class="article-content">
+                                ${article.content}
+                            </div>
+                        `;
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        // Fallback for articles without full content yet
+                        modalBody.innerHTML = `
+                            <div class="article-header">
+                                <span class="article-category">Article ${articleId}</span>
+                                <h1>Article Content Coming Soon</h1>
+                                <h2 class="article-subtitle">This article is being developed with comprehensive content.</h2>
+                                <div class="article-meta">Published January 2025</div>
+                            </div>
+                            <div class="article-content">
+                                <p class="lead">We're currently developing the full content for this thought leadership piece. Please check back soon for the complete article.</p>
+                                <div class="article-cta">
+                                    <p><strong>Interested in this topic?</strong></p>
+                                    <a href="index.html#contact" class="btn btn-primary">Contact Our Team</a>
+                                </div>
+                            </div>
+                        `;
+                        modal.style.display = 'block';
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            // Close modal functionality
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Close modal when clicking outside
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modal with escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Animate cards on page load
+            setTimeout(() => {
+                blogCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 50);
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>
