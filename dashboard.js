@@ -340,7 +340,7 @@ function initWorldMap() {
     
     // Initialize the map
     worldMap = L.map('world-map', {
-        centre: [20, 0], // Centre on equator
+        center: [20, 0], // Center on equator
         zoom: 2,
         minZoom: 2,
         maxZoom: 18,
@@ -858,7 +858,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({
-                behaviour: 'smooth',
+                behavior: 'smooth',
                 block: 'start'
             });
         }
